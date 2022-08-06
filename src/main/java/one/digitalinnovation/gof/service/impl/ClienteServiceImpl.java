@@ -39,6 +39,15 @@ public class ClienteServiceImpl implements ClienteService {
 		return clienteRepository.findAll();
 	}
 
+	// @Override
+	// public boolean existeClientePorId(Long id){
+	// 	// Implantado por kleim4n. Verifica se o cliente existe baseado no ID
+	// 	if (clienteRepository.existsById(id)){
+	// 		return true;
+	// 	}
+	// 	return false;
+	// }
+
 	@Override
 	public Cliente buscarPorId(Long id) {
 		// Buscar Cliente por ID.
@@ -64,6 +73,12 @@ public class ClienteServiceImpl implements ClienteService {
 	public void deletar(Long id) {
 		// Deletar Cliente por ID.
 		clienteRepository.deleteById(id);
+	}
+
+	@Override
+	public void deletarTodos() {
+		// Deletar Cliente por ID.
+		clienteRepository.deleteAll();
 	}
 
 	private void salvarClienteComCep(Cliente cliente) {

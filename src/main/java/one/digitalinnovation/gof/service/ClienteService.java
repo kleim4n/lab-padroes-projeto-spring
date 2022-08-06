@@ -21,4 +21,13 @@ public interface ClienteService {
 
 	void deletar(Long id);
 
+	void deletarTodos();
+
+	/**
+	 * @param id
+	 * @return truw or false
+	 * Verifica se existe algum cliente com dado id
+	 */
+	//boolean existeClientePorId(Long id);
+
 }

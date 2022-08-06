@@ -38,6 +38,14 @@ public class ClienteRestController {
 		return ResponseEntity.ok(clienteService.buscarPorId(id));
 	}
 
+	// @GetMapping("/{id}")
+	// public ResponseEntity<Boolean> existePorId(@PathVariable Long id) {
+	// 	if (clienteService.existeClientePorId(id)){
+	// 		return ResponseEntity.ok(true);
+	// 	}
+	// 	return ResponseEntity.ok(false);
+	// }
+
 	@PostMapping
 	public ResponseEntity<Cliente> inserir(@RequestBody Cliente cliente) {
 		clienteService.inserir(cliente);
@@ -53,6 +61,12 @@ public class ClienteRestController {
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> deletar(@PathVariable Long id) {
 		clienteService.deletar(id);
+		return ResponseEntity.ok().build();
+	}
+
+	@DeleteMapping
+	public ResponseEntity<Void> deletarTodos() {
+		clienteService.deletarTodos();
 		return ResponseEntity.ok().build();
 	}
 }
